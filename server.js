@@ -21,12 +21,12 @@ app.use((req,res, next) => {
   next();
 });
 
-app.use((req,res, next) => {
-  res.render('maintenance.hbs',{
-    welcomeMsg: 'Site being updated please call back later',
-    pageTitle: 'Maintenance'
-  });
-});
+// app.use((req,res, next) => {
+//   res.render('maintenance.hbs',{
+//     welcomeMsg: 'Site being updated please call back later',
+//     pageTitle: 'Maintenance'
+//   });
+// });
 
 app.use(express.static(__dirname + '/public' ));
 
@@ -55,12 +55,14 @@ app.get('/about', (req, res) => {
   });
 });
 
-app.get('/about', (req, res) => {
-  res.render('about.hbs',{
-    pageTitle: 'About',
+app.get('/project', (req, res) => {
+  // res.send('<h1>Hello Express!</h1>');
+  res.render('project.hbs',{
+    projectMsg: 'Hi there welcome to my project page',
+    pageTitle: 'Project',
     // currentYear: new Date().getFullYear()
   });
-});
+ });
 
 
 app.get('/project',(req,res) => {
